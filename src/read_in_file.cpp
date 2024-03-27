@@ -270,10 +270,10 @@
 	      }
 	      module = line.substr(i,j-i+1);
 
+	      architecture = "verilog";
+	      entitySavedAlready = 1;
+	      cout << "Top module: " << module << " ATTENTION code changed, move top module to be at the top of the file" << endl;
 	    }
-	    architecture = "verilog";
-	    entitySavedAlready = 1;
-	    cout << "Top module: " << module << " ATTENTION code changed, move top module to be at the top of the file" << endl;
 	    
 	  }else return 0;
 	}
