@@ -48,7 +48,10 @@ void Netlist::get_ff_inOuts(){
 	  
 	  	if ((components_[h]->gateType_ == Gate::DFF) || (components_[h]->gateType_ == Gate::SDFF))
 	  	{
-	  		outputsFF_.push_back(components_[h]->inputs_[0]->wire_);
+			if ((components_[h]->inputs_[0]->wire_->name_ != "zero_input") && (components_[h]->inputs_[0]->wire_->name_ != "one_input"))
+			{
+	  			outputsFF_.push_back(components_[h]->inputs_[0]->wire_);
+			}
 
 	  		inputsFF_.push_back(components_[h]->output_->wire_);
 	  	}
